@@ -20,6 +20,12 @@ const search = document.getElementById('search');
 const searchBtn = document.getElementById('searchBtn');
 searchBtn.addEventListener('click', asyncWeather)
 
+// Location, weather, temp ID, first div
+const locationID = document.getElementById('locationID');
+const weatherID = document.getElementById('weatherID');
+const tempID = document.getElementById('tempID');
+const highID = document.getElementById('highID')
+const lowID = document.getElementById('lowID')
 
 async function asyncWeather(){
     searchTerm = search.value;
@@ -42,6 +48,13 @@ async function asyncWeather(){
         const div = document.getElementById('showWeather')
         const weatherDataDiv = weatherData.main.temp;
         div.textContent = (weatherDataDiv + ' Celcius')
+        locationID.textContent = searchTerm;
+        weatherID.textContent = weatherData.weather[0].description;
+        tempID.textContent = weatherData.main.temp;
+        highID.textContent = weatherData.main.temp_max;
+        lowID.textContent = weatherData.main.temp_min;
+
+
     }
     divWeather()
 
@@ -59,3 +72,6 @@ sys.sunrise
 sys.sunset
 weather.description
 */
+
+
+
