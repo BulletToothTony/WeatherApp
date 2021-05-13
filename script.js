@@ -26,6 +26,14 @@ const weatherID = document.getElementById('weatherID');
 const tempID = document.getElementById('tempID');
 const highID = document.getElementById('highID')
 const lowID = document.getElementById('lowID')
+const sunriseID = document.getElementById('sunriseID')
+const sunsetID = document.getElementById('sunsetID')
+const chancerainID = document.getElementById('chancerainID')
+const humidityID = document.getElementById('humidityID')
+const feelsID = document.getElementById('feelsID')
+const weathertypeID = document.getElementById('weathertypeID')
+const windID = document.getElementById('windID')
+
 
 async function asyncWeather(){
     searchTerm = search.value;
@@ -56,7 +64,19 @@ async function asyncWeather(){
 
 
     }
+
+    function sunriseDiv() {
+        var s = new Date(weatherData.sys.sunset).toLocaleTimeString("en-UK")
+        console.log(s)
+        sunriseID.textContent = s;
+        humidityID.textContent = weatherData.main.humidity + '%';
+        feelsID.textContent = weatherData.main.feels_like;
+        weathertypeID.textContent = weatherData.weather[0].main;
+        windID.textContent = weatherData.wind.speed + ' km/hr';
+    }
+
     divWeather()
+    sunriseDiv()
 
 }
 
