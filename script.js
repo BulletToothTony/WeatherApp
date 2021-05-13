@@ -28,11 +28,14 @@ const highID = document.getElementById('highID')
 const lowID = document.getElementById('lowID')
 const sunriseID = document.getElementById('sunriseID')
 const sunsetID = document.getElementById('sunsetID')
-const chancerainID = document.getElementById('chancerainID')
+const visibilityID = document.getElementById('visibilityID')
 const humidityID = document.getElementById('humidityID')
 const feelsID = document.getElementById('feelsID')
 const weathertypeID = document.getElementById('weathertypeID')
 const windID = document.getElementById('windID')
+const countryID = document.getElementById('countryID')
+const highblueID = document.getElementById('highblueID')
+const lowblueID = document.getElementById('lowblueID')
 
 
 async function asyncWeather(){
@@ -61,6 +64,8 @@ async function asyncWeather(){
         tempID.textContent = weatherData.main.temp;
         highID.textContent = weatherData.main.temp_max;
         lowID.textContent = weatherData.main.temp_min;
+        highblueID.textContent = weatherData.main.temp_max;
+        lowblueID.textContent = weatherData.main.temp_min;
 
 
     }
@@ -69,10 +74,13 @@ async function asyncWeather(){
         var s = new Date(weatherData.sys.sunset).toLocaleTimeString("en-UK")
         console.log(s)
         sunriseID.textContent = s;
+        sunsetID.textContent = s;
         humidityID.textContent = weatherData.main.humidity + '%';
         feelsID.textContent = weatherData.main.feels_like;
-        weathertypeID.textContent = weatherData.weather[0].main;
+        weathertypeID.textContent = weatherData.weather[0].description;
         windID.textContent = weatherData.wind.speed + ' km/hr';
+        visibilityID.textContent = weatherData.visibility / 100 + 'km';
+        countryID.textContent = weatherData.sys.country;
     }
 
     divWeather()
