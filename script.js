@@ -19,6 +19,8 @@ let weatherData = '';
 const search = document.getElementById('search');
 const searchBtn = document.getElementById('searchBtn');
 searchBtn.addEventListener('click', asyncWeather)
+document.getElementById('search').value = 'London';
+asyncWeather()
 
 // Location, weather, temp ID, first div
 const locationID = document.getElementById('locationID');
@@ -36,6 +38,7 @@ const windID = document.getElementById('windID')
 const countryID = document.getElementById('countryID')
 const highblueID = document.getElementById('highblueID')
 const lowblueID = document.getElementById('lowblueID')
+const toggleTemp = document.getElementById('toggleTemp')
 
 
 async function asyncWeather(){
@@ -56,18 +59,18 @@ async function asyncWeather(){
     console.log(weatherData.weather[0].description)
     
     function divWeather() {
+        console.log('DIV WEATHERE')
         const div = document.getElementById('showWeather')
         const weatherDataDiv = weatherData.main.temp;
         div.textContent = (weatherDataDiv + ' Celcius')
         locationID.textContent = searchTerm;
         weatherID.textContent = weatherData.weather[0].description;
-        tempID.textContent = weatherData.main.temp;
-        highID.textContent = weatherData.main.temp_max;
-        lowID.textContent = weatherData.main.temp_min;
-        highblueID.textContent = weatherData.main.temp_max;
-        lowblueID.textContent = weatherData.main.temp_min;
-
-
+        tempID.textContent = weatherData.main.temp + '°';
+        highID.textContent = weatherData.main.temp_max + '°';
+        lowID.textContent = weatherData.main.temp_min + '°';
+        highblueID.textContent = weatherData.main.temp_max + '°';
+        lowblueID.textContent = weatherData.main.temp_min + '°';
+        weathertypeID.textContent = weatherData.weather[0].description;
     }
 
     function sunriseDiv() {
@@ -77,15 +80,23 @@ async function asyncWeather(){
         sunsetID.textContent = s;
         humidityID.textContent = weatherData.main.humidity + '%';
         feelsID.textContent = weatherData.main.feels_like;
-        weathertypeID.textContent = weatherData.weather[0].description;
         windID.textContent = weatherData.wind.speed + ' km/hr';
         visibilityID.textContent = weatherData.visibility / 100 + 'km';
         countryID.textContent = weatherData.sys.country;
+        weathersuntypeID.textContent = weatherData.timezone / 3600 + 'hrs'
     }
 
     divWeather()
     sunriseDiv()
 
+}
+
+
+
+toggleTemp.addEventListener('click', toggleFunc)
+
+function toggleFunc() {
+    console.log('ciccc')
 }
 
 
