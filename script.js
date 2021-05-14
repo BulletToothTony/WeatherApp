@@ -62,9 +62,9 @@ async function asyncWeather(){
         console.log('DIV WEATHERE')
         const div = document.getElementById('showWeather')
         const weatherDataDiv = weatherData.main.temp;
-        div.textContent = (weatherDataDiv + ' Celcius')
+        // div.textContent = (weatherDataDiv + ' Celcius')
         locationID.textContent = searchTerm;
-        weatherID.textContent = weatherData.weather[0].description;
+        weatherID.textContent = weatherData.weather[0].main;
         tempID.textContent = weatherData.main.temp + '°';
         highID.textContent = weatherData.main.temp_max + '°';
         lowID.textContent = weatherData.main.temp_min + '°';
