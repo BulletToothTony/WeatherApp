@@ -27,9 +27,9 @@
     background-color: rgb(13, 109, 253);
 }
 
-.list-group-item {
+/* .list-group-item {
     padding: 20px;    
-}
+} */
 
 .weatherCont .weatherDiv{
     background-color: rgb(70, 70, 70);
@@ -51,4 +51,8 @@
 
 .container-fluid img {
     height: 50px;
+}
+
+table {
+    width: 100%;
 }

@@ -70,7 +70,7 @@
     <div class="col-12 text-center bg-dark weatherDiv">
         <div class="container text-light weatherCont">
             <div class="flex-row text-center justify-content-center">
-                <div class="list-group-item list-group-item-dark"><h5>Sunrise</h5>
+                <div class="list-group-item list-group-item-dark text-md-center"><h5>Sunrise</h5>
                 <span id="sunriseID">Test</span></div>
                 <div class="list-group-item list-group-item-dark"><h5>Sunset</h5>
                 <span id="sunsetID"></span></div>
@@ -94,16 +94,31 @@
 
         </div>
     </div>
+    
+    <div class="finalDiv">
+        <table>
+            <tr class="text-center">
+                <th>DAY</th>
+                <th>RAIN %</th>
+                <th>TEMPERATURE</th>
+                <th>HUMIDITY</th>
+            </tr>
 
-    <div class="weatherContainer">
-        <h1>Weather App</h1>
+            <tr class="text-center">
+                <td>Sat</td>
+                <td>40%</td>
+                <td>10 Deg</td>
+                <td>84%</td>
 
-        <!-- <input type="text" name="search" id="search"> -->
-        <button id="searchBtn">Search</button>
+            </tr>
 
-        <div class="showWeather" id="showWeather"></div>
+        </table>
+
 
     </div>
+
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
     <script src="script.js"></script>
 </body>
