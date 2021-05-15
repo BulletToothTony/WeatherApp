@@ -74,10 +74,12 @@ async function asyncWeather(){
     }
 
     function sunriseDiv() {
-        var s = new Date(weatherData.sys.sunset).toLocaleTimeString("en-UK")
+        // var s = new Date(weatherData.sys.sunrise).toLocaleTimeString("en-UK")
+        var s = new Date(weatherData.sys.sunrise * 1000);
+        var ss = new Date(weatherData.sys.sunset * 1000);
         console.log(s)
         sunriseID.textContent = s;
-        sunsetID.textContent = s;
+        sunsetID.textContent = ss;
         humidityID.textContent = weatherData.main.humidity + '%';
         feelsID.textContent = weatherData.main.feels_like;
         windID.textContent = weatherData.wind.speed + ' km/hr';
