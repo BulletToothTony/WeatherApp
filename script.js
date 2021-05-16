@@ -4,7 +4,7 @@ console.log('test')
 
 
 async function getWeather() {
-    const response = await fetch('https://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=20bfa48eac5aa19ce97a2f0bab3b4f8f&units=metric', {mode: 'cors'})
+    const response = await fetch('http://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=20bfa48eac5aa19ce97a2f0bab3b4f8f&units=metric', {mode: 'cors'})
     const weatherData = await response.json();
     console.log(response);
     console.log(weatherData);
@@ -45,7 +45,7 @@ async function asyncWeather(){
     searchTerm = search.value;
     console.log('TESTING');
     console.log(search.value);
-    const response = await fetch('https://api.openweathermap.org/data/2.5/weather?q=' + searchTerm + ',&APPID=20bfa48eac5aa19ce97a2f0bab3b4f8f&units=metric', {mode: 'cors'})
+    const response = await fetch('http://api.openweathermap.org/data/2.5/weather?q=' + searchTerm + ',&APPID=20bfa48eac5aa19ce97a2f0bab3b4f8f&units=metric', {mode: 'cors'})
     const weatherData = await response.json();
     console.log(response);
     console.log(weatherData);
@@ -91,7 +91,7 @@ async function asyncWeather(){
     }
 
     async function tableDiv() {
-        const response = await fetch('https://api.openweathermap.org/data/2.5/forecast?q=London,uk&appid=20bfa48eac5aa19ce97a2f0bab3b4f8f&units=metric', {mode: 'cors'})
+        const response = await fetch('http://api.openweathermap.org/data/2.5/forecast?q=London,uk&appid=20bfa48eac5aa19ce97a2f0bab3b4f8f&units=metric', {mode: 'cors'})
 	    const weatherData5 = await response.json();
         console.log(weatherData5);
         //  var s = new Date(weatherData.sys.sunrise * 1000);
