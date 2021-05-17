@@ -76,6 +76,10 @@ h5 {
     color: rgb(131, 131, 131);
 }
 
+.finalDiv {
+    padding-bottom: 50px;
+}
+
 /* Smartphones (portrait) ----------- */
 @media only screen and (max-width : 399px) {
     /* Styles */

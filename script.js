@@ -110,7 +110,7 @@ async function asyncWeather(){
     }
 
     async function tableDiv() {
-        const response = await fetch('https://api.openweathermap.org/data/2.5/forecast?q=London,uk&appid=20bfa48eac5aa19ce97a2f0bab3b4f8f&units=' + unit, {mode: 'cors'})
+        const response = await fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + searchTerm + '&appid=20bfa48eac5aa19ce97a2f0bab3b4f8f&units=' + unit, {mode: 'cors'})
 	    const weatherData5 = await response.json();
         console.log(weatherData5);
         //  var s = new Date(weatherData.sys.sunrise * 1000);
