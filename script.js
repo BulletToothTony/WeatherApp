@@ -1,8 +1,5 @@
 console.log('test')
 
-
-
-
 async function getWeather() {
     const response = await fetch('https://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=20bfa48eac5aa19ce97a2f0bab3b4f8f&units=metric', {mode: 'cors'})
     const weatherData = await response.json();
@@ -12,6 +9,9 @@ async function getWeather() {
 }
 
 getWeather();
+
+let unit = '';
+let counter = 0;
 
 let weatherDataDiv = '';
 let weatherData = '';
@@ -40,12 +40,31 @@ const highblueID = document.getElementById('highblueID')
 const lowblueID = document.getElementById('lowblueID')
 const toggleTemp = document.getElementById('toggleTemp')
 
+toggleTemp.addEventListener('click', toggleFunc)
+
+function toggleFunc() {
+    console.log('ciccc load everything over metric')
+    if (counter == 0) {
+        counter = 1;
+    } else {
+        counter = 0;
+    }
+    console.log(counter)
+    asyncWeather()
+}
+
+
 
 async function asyncWeather(){
     searchTerm = search.value;
+    if (counter == 0) {
+        unit = 'metric'
+    } else if (counter == 1) {
+        unit = 'imperial'
+    }
     console.log('TESTING');
     console.log(search.value);
-    const response = await fetch('https://api.openweathermap.org/data/2.5/weather?q=' + searchTerm + ',&APPID=20bfa48eac5aa19ce97a2f0bab3b4f8f&units=metric', {mode: 'cors'})
+    const response = await fetch('https://api.openweathermap.org/data/2.5/weather?q=' + searchTerm + ',&APPID=20bfa48eac5aa19ce97a2f0bab3b4f8f&units=' + unit, {mode: 'cors'})
     const weatherData = await response.json();
     console.log(response);
     console.log(weatherData);
@@ -91,7 +110,7 @@ async function asyncWeather(){
     }
 
     async function tableDiv() {
-        const response = await fetch('https://api.openweathermap.org/data/2.5/forecast?q=London,uk&appid=20bfa48eac5aa19ce97a2f0bab3b4f8f&units=metric', {mode: 'cors'})
+        const response = await fetch('https://api.openweathermap.org/data/2.5/forecast?q=London,uk&appid=20bfa48eac5aa19ce97a2f0bab3b4f8f&units=' + unit, {mode: 'cors'})
 	    const weatherData5 = await response.json();
         console.log(weatherData5);
         //  var s = new Date(weatherData.sys.sunrise * 1000);
@@ -152,13 +171,6 @@ async function asyncWeather(){
 
 }
 
-
-
-toggleTemp.addEventListener('click', toggleFunc)
-
-function toggleFunc() {
-    console.log('ciccc load everything over metric')
-}
 
 
 /* Date I want to collect:

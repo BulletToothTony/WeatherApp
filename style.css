@@ -46,6 +46,7 @@
 
 .blueDiv {
     padding: 15px;
+    color: linen;
 }
 
 .container-fluid {
@@ -59,4 +60,17 @@
 
 table {
     width: 100%;
+}
+
+.weatherInDiv {
+    width: 250px;
+    height: 100px;
+    font-size: 1.25rem;
+    color: linen;
+}
+
+h5 {
+    padding-top: 2px;
+    font-size: 1rem;
+    color: rgb(131, 131, 131);
 }
