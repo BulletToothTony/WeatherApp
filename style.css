@@ -74,3 +74,66 @@ h5 {
     font-size: 1rem;
     color: rgb(131, 131, 131);
 }
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width : 399px) {
+    /* Styles */
+    body {
+        width: 105%;
+    }
+    .weatherInDiv {
+        height: 90px;
+        width: 90px;
+        font-size: 0.5rem;
+    }
+
+    h5 {
+        font-size: 0.5rem;
+    }
+
+    table {
+        font-size: 0.6rem;
+    }
+
+    }
+
+
+
+@media only screen and (max-width : 400px) {
+    /* Styles */
+    body {
+        width: 105%;
+    }
+    .weatherInDiv {
+        height: 100px;
+        width: 110px;
+        font-size: 0.6rem;
+    }
+
+    h5 {
+        font-size: 0.85rem;
+    }
+
+    table {
+        font-size: 0.7rem;
+    }
+
+    }
+
+        
+@media only screen and (max-width : 500px) {
+    .weatherInDiv {
+        height: 110px;
+        width: 110px;
+        font-size: 1rem;
+    }
+
+    h5 {
+        font-size: 0.85rem;
+    }
+
+    table {
+        font-size: 0.8rem;
+    }
+
+    }
