@@ -18,9 +18,10 @@ let weatherData = '';
 
 const search = document.getElementById('search');
 const searchBtn = document.getElementById('searchBtn');
-searchBtn.addEventListener('click', asyncWeather)
-document.getElementById('search').value = 'London';
+// searchBtn.addEventListener('click', asyncWeather);
+document.getElementById('search').value = 'Berlin';
 asyncWeather()
+searchBtn.addEventListener('click', asyncWeather);
 
 // Location, weather, temp ID, first div
 const locationID = document.getElementById('locationID');
@@ -43,7 +44,6 @@ const toggleTemp = document.getElementById('toggleTemp')
 toggleTemp.addEventListener('click', toggleFunc)
 
 function toggleFunc() {
-    console.log('ciccc load everything over metric')
     if (counter == 0) {
         counter = 1;
     } else {
@@ -184,6 +184,3 @@ sys.sunrise
 sys.sunset
 weather.description
 */
-
-
-
