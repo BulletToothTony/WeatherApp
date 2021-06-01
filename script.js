@@ -64,6 +64,7 @@ async function asyncWeather(){
     }
     console.log('TESTING');
     console.log(search.value);
+    
     const response = await fetch('https://api.openweathermap.org/data/2.5/weather?q=' + searchTerm + ',&APPID=20bfa48eac5aa19ce97a2f0bab3b4f8f&units=' + unit, {mode: 'cors'})
     const weatherData = await response.json();
     console.log(response);

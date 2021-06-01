@@ -81,9 +81,9 @@ h5 {
 }
 
 /* Smartphones (portrait) ----------- */
-@media only screen and (max-width : 399px) {
+/* @media only screen and (max-width : 399px) {
     /* Styles */
-    body {
+    /* body {
         width: 105%;
     }
     .weatherInDiv {
@@ -101,7 +101,7 @@ h5 {
     }
 
     }
-
+ */ 
 
 
 @media only screen and (max-width : 400px) {
@@ -110,13 +110,13 @@ h5 {
         width: 105%;
     }
     .weatherInDiv {
-        height: 100px;
-        width: 110px;
-        font-size: 0.6rem;
+        height: 80px;
+        width: 80px;
+        font-size: 0.7rem;
     }
 
     h5 {
-        font-size: 0.85rem;
+        font-size: 0.75rem;
     }
 
     table {
@@ -125,7 +125,7 @@ h5 {
 
     }
 
-        
+/*         
 @media only screen and (max-width : 500px) {
     .weatherInDiv {
         height: 110px;
@@ -141,4 +141,4 @@ h5 {
         font-size: 0.8rem;
     }
 
-    }
+    } */
